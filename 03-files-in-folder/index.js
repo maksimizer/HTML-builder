@@ -14,9 +14,9 @@ async function getFilesInfo(dirPath) {
           } else {
             const filePath = path.join(dirPath, file.name);
             console.log(`${path.parse(filePath).name} - ${path.extname(filePath).slice(1)} - ${stats.size}b`);
-          };
+          }
         });
-      };
+      }
     });
   } catch (error) {
     console.log(error.message);
