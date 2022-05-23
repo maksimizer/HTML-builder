@@ -20,7 +20,7 @@ async function createHTML(pagePath, componentsDirPath) {
         let dataComponents = '';
         streamComponents.on('data', chunk => dataComponents += chunk);
         streamComponents.on('end', () => {
-          dataTemplate = dataTemplate.replace(`{{${componentName}}}`, dataComponents);
+          dataTemplate = dataTemplate.replace(`    {{${componentName}}}`, dataComponents);
           const output = fs.createWriteStream(path.join(projectDistPath, 'index.html'));
           output.write(dataTemplate);
           console.log(`${component.name} merged to index.html`);
